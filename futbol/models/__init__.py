@@ -1,0 +1,1 @@
+from . import equipos, partidos, entrenadores, jugadores, paises

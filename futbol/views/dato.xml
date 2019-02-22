@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <act_window id="futbol_paises_action" name="Paises"
+                     res_model="futbol.paises" />
+        <act_window id="futbol_entrenadores_action" name="Entrenadores"
+                     res_model="futbol.entrenadores" />
+        <act_window id="futbol_jugadores_action" name="Jugadores"
+                     res_model="futbol.jugadores" />
+        <act_window id="futbol_equipos_action" name="Equipos"
+                     res_model="futbol.equipos"/>
+        <act_window id="futbol_partidos_action" name="Partidos"
+                     res_model="futbol.partidos"/>
+
+        <record id="futbol_paises_view_tree" model="ir.ui.view">
+            <field name="name">Paises</field>
+            <field name="model">futbol.paises</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="bandera" widget="image" />
+                    <field name="nombre" />
+                </tree>
+            </field>
+
+        </record>
+
+        <record id="futbol_entrenadores_view_tree" model="ir.ui.view">
+            <field name="name">Entrenadores</field>
+            <field name="model">futbol.entrenadores</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="foto" widget="image" />
+                    <field name="nombre" />
+                    <field name="apellidos" />
+                    <field name="pais" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="futbol_jugadores_view_tree" model="ir.ui.view">
+            <field name="name">Jugadores</field>
+            <field name="model">futbol.jugadores</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="foto" widget="image" />
+                    <field name="nombre" />
+                    <field name="apellidos" />
+                    <field name="pais" />
+                </tree>
+            </field>
+        </record>
+
+         <record id="futbol_equipos_view_tree" model="ir.ui.view">
+            <field name="name">Equipos</field>
+            <field name="model">futbol.equipos</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="nombre" />
+                    <field name="pais" />
+                    <field name="entrenador" />
+                    <field name="jugador1" />
+                    <field name="jugador2" />
+                    <field name="jugador3" />
+                    <field name="jugador4" />
+                    <field name="jugador5" />
+                </tree>
+            </field>
+        </record>
+        
+        <record id="futbol_partidos_view_tree" model="ir.ui.view">
+            <field name="name">Partidos</field>
+            <field name="model">futbol.partidos</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="fecha" />
+                    <field name="pais" />
+                    <field name="anfitrion"/>
+                    <field name="resultAnfitrion" />
+                    <field name="visitante" />
+                    <field name="resultVisitante" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="futbol_paises_view_search" model="ir.ui.view">
+            <field name="name">Busqueda paises</field>
+            <field name="model">futbol.paises</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="nombre" />
+                </search>
+            </field>
+        </record>
+
+        <record id="futbol_entrenadores_view_search" model="ir.ui.view">
+            <field name="name">Busqueda entrenadores</field>
+            <field name="model">futbol.entrenadores</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="nombre" />
+                    <field name="apellidos" />
+                    <field name="pais" />
+                </search>
+            </field>
+        </record>
+
+        <record id="futbol_jugadores_view_search" model="ir.ui.view">
+            <field name="name">Busqueda jugadores</field>
+            <field name="model">futbol.jugadores</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="nombre" />
+                    <field name="apellidos" />
+                    <field name="pais" />
+                </search>
+            </field>
+        </record>
+
+        <record id="futbol_equipos_view_search" model="ir.ui.view">
+            <field name="name">Busqueda equipos</field>
+            <field name="model">futbol.equipos</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="nombre" />
+                    <field name="pais" />
+                    <field name="entrenador" />
+                    <field name="jugador1" />
+                    <field name="jugador2" />
+                    <field name="jugador3" />
+                    <field name="jugador4" />
+                    <field name="jugador5" />
+                </search>
+            </field>
+        </record>
+        
+        <record id="futbol_partidos_view_search" model="ir.ui.view">
+            <field name="name">Busqueda partidos</field>
+            <field name="model">futbol.partidos</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="fecha" />
+                    <field name="pais" />
+                    <field name="anfitrion" />
+                    <field name="resultAnfitrion" />
+                    <field name="visitante" />
+                    <field name="resultVisitante" />
+                </search>
+            </field>
+        </record>
+
+        <menuitem name="Futbol" id="menu_top" sequence="10" />
+        <menuitem name="Inicio" id="menu_inicio" parent="menu_top" sequence="10"/>
+        <menuitem name="Paises" id="menu_paises" action="futbol_paises_action" parent="menu_inicio" sequence="10"/>
+        <menuitem name="Entrenadores" id="menu_entrenadores" action="futbol_entrenadores_action" parent="menu_inicio" sequence="10"/>
+        <menuitem name="Equipos" id="menu_equipos" action="futbol_equipos_action" parent="menu_inicio" sequence="10"/>
+        <menuitem name="Jugadores" id="menu_jugadores" action="futbol_jugadores_action" parent="menu_inicio" sequence="10"/>
+        <menuitem name="Partidos" id="menu_partidos" action="futbol_partidos_action" parent="menu_inicio" sequence="10"/>
+
+    </data>
+</odoo>
